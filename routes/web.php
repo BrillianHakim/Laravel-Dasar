@@ -1,8 +1,8 @@
 <?php
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
-use App\Http\Controllers\SiswaController;
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,7 +17,10 @@ route::get('/blog',[BlogController::class,'blog']);
 route::get('/blog/tentang',[BlogController::class,'tentang']);
 route::get('/blog/tentang/kontak',[BlogController::class,'kontak']);
 
-// CobaController
-route::get('/siswa/create',[SiswaContoller::class,'create'])->name('siswa.create');
-route::post('/siswa',[SiswaContoller::class,'store'])->name('siswa.store');
-route::get('/siswa',[SiswaContoller::class,'index'])->name('siswa.index');
+// Request dan Response
+route::get('/request-response/user-form',[UserController::class,'showForm'])->name('user.form');
+route::post('/submit-form',[UserController::class,'submitForm'])->name('user.submit');
+
+// Request dan Response Contact
+route::get('/request-response/contact',[ContactController::class,'showForm'])->name('contact.form');
+Route::post('/contact', [ContactController::class, 'handleForm'])->name('contact.submit');
