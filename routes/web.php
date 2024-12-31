@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\EventRegistrasiController;
+use App\Http\Controllers\HomeMiddlewareController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,6 +15,9 @@ use App\Http\Controllers\EventRegistrasiController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+route::get('/', function () {
+    return view('welcome');
+});
 
 // Blog 
 route::get('/blog',[BlogController::class,'blog']);
@@ -31,3 +35,10 @@ Route::post('/contact', [ContactController::class, 'handleForm'])->name('contact
 // Latihan event registrasi 
 route::get('latihan-fundamental/event/registrasi',[EventRegistrasiController::class,'showForm'])->name('event.registarasi');
 Route::post('/event/registrasi', [EventRegistrasiController::class, 'submitForm'])->name('event.submit');
+
+// Middleware
+route::get('/about',[HomeMiddlewareController::class,'about']);
+route::get('/product',[HomeMiddlewareController::class,'product']);
+route::get('/cart',[HomeMiddlewareController::class,'cart']);
+route::get('/order',[HomeMiddlewareController::class,'order']);
+route::get('/cektanggal',[HomeMiddlewareController::class,'cektanggal'])->middleware('ordermidleware');
