@@ -6,6 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\EventRegistrasiController;
 use App\Http\Controllers\HomeMiddlewareController;
 use App\Http\Controllers\LatMiddlewareController;
+use App\Http\Controllers\PegawaiController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -47,3 +48,6 @@ route::get('/cektanggal',[HomeMiddlewareController::class,'cektanggal'])->middle
 // Latihan Middleware
 route::get('/latihan-middleware',[LatMiddlewareController::class,'index'])->middleware('latihanmidleware');
 route::get('/latihan-middleware/cek-tanggal',[LatMiddlewareController::class,'cek']);
+
+// Eloquent ORM
+route::get('/pegawai', [PegawaiController::class, 'index']);
