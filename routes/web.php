@@ -5,6 +5,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\EventRegistrasiController;
 use App\Http\Controllers\HomeMiddlewareController;
+use App\Http\Controllers\LatMiddlewareController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -42,3 +43,7 @@ route::get('/product',[HomeMiddlewareController::class,'product']);
 route::get('/cart',[HomeMiddlewareController::class,'cart']);
 route::get('/order',[HomeMiddlewareController::class,'order']);
 route::get('/cektanggal',[HomeMiddlewareController::class,'cektanggal'])->middleware('ordermidleware');
+
+// Latihan Middleware
+route::get('/latihan-middleware',[LatMiddlewareController::class,'index'])->middleware('latihanmidleware');
+route::get('/latihan-middleware/cek-tanggal',[LatMiddlewareController::class,'cek']);
