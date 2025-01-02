@@ -7,6 +7,7 @@ use App\Http\Controllers\EventRegistrasiController;
 use App\Http\Controllers\HomeMiddlewareController;
 use App\Http\Controllers\LatMiddlewareController;
 use App\Http\Controllers\PegawaiController;
+use App\Http\Controllers\PekerjaanController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -51,3 +52,6 @@ route::get('/latihan-middleware/cek-tanggal',[LatMiddlewareController::class,'ce
 
 // Eloquent ORM
 route::get('/pegawai', [PegawaiController::class, 'index']);
+
+// Eloquent ORM Relationship latihan
+route::get('/pekerjaan',[PekerjaanController::class,'index']);
