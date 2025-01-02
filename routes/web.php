@@ -8,6 +8,7 @@ use App\Http\Controllers\HomeMiddlewareController;
 use App\Http\Controllers\LatMiddlewareController;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\PekerjaanController;
+use App\Http\Controllers\PenggunaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -55,3 +56,5 @@ route::get('/pegawai', [PegawaiController::class, 'index']);
 
 // Eloquent ORM Relationship latihan
 route::get('/pekerjaan',[PekerjaanController::class,'index']);
+// Eloqunt ORM Relationship latihan 2
+route::get('/pengguna',[PenggunaController::class,'index']);
