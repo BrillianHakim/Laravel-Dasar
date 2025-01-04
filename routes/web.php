@@ -65,5 +65,11 @@ route::get('/produk',[ProdukController::class,'index']);
 
 // CRUD Pegawai
 route::get('/pegawaicrud',[PegawaiCrudController::class,'index']);
+// CRUD Pegawai tambah
 route::get('/pegawai/tambah',[PegawaiCrudController::class,'tambah']);
 route::post('/pegawai/store',[PegawaiCrudController::class,'store']);
+// CRUD Pegawai edit
+route::get('/pegawai/edit/{id}',[pegawaiCrudController::class,'edit']);
+route::post('/pegawai/update',[pegawaiCrudController::class,'update']);
+// CRUD Pegawai hapus
+route::get('pegawai/hapus/{id}',[pegawaiCrudController::class,'hapus']);
