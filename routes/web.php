@@ -65,3 +65,5 @@ route::get('/produk',[ProdukController::class,'index']);
 
 // CRUD Pegawai
 route::get('/pegawaicrud',[PegawaiCrudController::class,'index']);
+route::get('/pegawai/tambah',[PegawaiCrudController::class,'tambah']);
+route::post('/pegawai/store',[PegawaiCrudController::class,'store']);

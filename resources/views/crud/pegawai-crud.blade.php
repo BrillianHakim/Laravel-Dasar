@@ -8,6 +8,11 @@
 </head>
 <body>
     <h1>Data Pegawai</h1>
+    <a  href="/pegawai/tambah"> + Tambah Pegawai Baru</a>
+
+    <br>
+
+    <br>
     <table border="1">
         <thead>
             <tr>
@@ -15,6 +20,7 @@
                 <th>jabatan</th>
                 <th>umur</th>
                 <th>Alamat</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
@@ -24,6 +30,10 @@
                     <td>{{ $p->pegawai_jabatan }}</td>
                     <td>{{ $p->pegawai_umur }}</td>
                     <td>{{ $p->pegawai_alamat }}</td>
+                    <td>
+                        <a href="/pegawai/edit/{{ $p->pegawai_id}}">Edit</a>|
+                        <a href="/pegawai/hapus/{{ $p->pegawai_id }}">Hapus</a>    
+                    </td>
                 </tr>
             @endforeach
         </tbody>
