@@ -10,6 +10,7 @@ use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\PekerjaanController;
 use App\Http\Controllers\PenggunaController;
 use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\PegawaiCrudController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -61,3 +62,6 @@ route::get('/pekerjaan',[PekerjaanController::class,'index']);
 route::get('/pengguna',[PenggunaController::class,'index']);
 // Eloqunt ORM Relationship latihan produk
 route::get('/produk',[ProdukController::class,'index']);
+
+// CRUD Pegawai
+route::get('/pegawaicrud',[PegawaiCrudController::class,'index']);
