@@ -11,6 +11,8 @@ use App\Http\Controllers\PekerjaanController;
 use App\Http\Controllers\PenggunaController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\PegawaiCrudController;
+use App\Http\Controllers\PaginationController;
+use App\Http\Controllers\LatPaginationController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -73,3 +75,8 @@ route::get('/pegawai/edit/{id}',[pegawaiCrudController::class,'edit']);
 route::post('/pegawai/update',[pegawaiCrudController::class,'update']);
 // CRUD Pegawai hapus
 route::get('pegawai/hapus/{id}',[pegawaiCrudController::class,'hapus']);
+
+// pagination
+route::get('/pagination',[PaginationController::class,'index']);
+// latihan pagination 
+route::get('/latpagination',[LatPaginationController::class,'index']);
