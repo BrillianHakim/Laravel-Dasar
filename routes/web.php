@@ -81,5 +81,3 @@ route::get('pegawai/hapus/{id}',[pegawaiCrudController::class,'hapus']);
 route::get('/pagination',[PaginationController::class,'index']);
 // latihan pagination 
 route::get('/latpagination',[LatPaginationController::class,'index']);
-// lat 2
-route::get('/lat',[LatController::class,'index']);
