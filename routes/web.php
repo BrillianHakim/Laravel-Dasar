@@ -14,6 +14,7 @@ use App\Http\Controllers\PegawaiCrudController;
 use App\Http\Controllers\PaginationController;
 use App\Http\Controllers\LatPaginationController;
 use App\Http\Controllers\LatController;
+use App\Http\Controllers\CariController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -81,3 +82,7 @@ route::get('pegawai/hapus/{id}',[pegawaiCrudController::class,'hapus']);
 route::get('/pagination',[PaginationController::class,'index']);
 // latihan pagination 
 route::get('/latpagination',[LatPaginationController::class,'index']);
+
+// Cari
+route::get('/cari',[Caricontroller::class,'index']);
+route::get('/cari/cari',[Caricontroller::class,'cari'])->name('cari.cari');
