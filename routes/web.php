@@ -15,6 +15,7 @@ use App\Http\Controllers\PaginationController;
 use App\Http\Controllers\LatPaginationController;
 use App\Http\Controllers\LatController;
 use App\Http\Controllers\CariController;
+use App\Http\Controllers\BukuController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -86,3 +87,6 @@ route::get('/latpagination',[LatPaginationController::class,'index']);
 // Cari
 route::get('/cari',[Caricontroller::class,'index']);
 route::get('/cari/cari',[Caricontroller::class,'cari'])->name('cari.cari');
+// Latihan Cari
+route::get('/buku',[BukuController::class,'index']);
+route::get('buku/cari',[BukuController::class,'cari'])->name('buku.cari');
