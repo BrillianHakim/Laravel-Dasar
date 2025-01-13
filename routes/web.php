@@ -16,6 +16,7 @@ use App\Http\Controllers\LatPaginationController;
 use App\Http\Controllers\LatController;
 use App\Http\Controllers\CariController;
 use App\Http\Controllers\BukuController;
+use App\Http\Controllers\SiswaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -90,3 +91,12 @@ route::get('/cari/cari',[Caricontroller::class,'cari'])->name('cari.cari');
 // Latihan Cari
 route::get('/buku',[BukuController::class,'index']);
 route::get('buku/cari',[BukuController::class,'cari'])->name('buku.cari');
+
+// latihan Crud,Pagination,Search
+route::get('/siswa',[SiswaController::class,'index']);
+route::get('/siswa/tambah',[SiswaController::class,'tambah']);
+route::post('/siswa/store',[SiswaController::class,'store']);
+route::get('/siswa/edit/{id}',[SiswaController::class,'edit']);
+route::post('/siswa/update',[SiswaController::class,'update']);
+route::get('/siswa/hapus/{id}',[SiswaController::class,'hapus']);
+route::get('/siswa/cari',[SiswaController::class,'cari'])->name('siswa.cari');
