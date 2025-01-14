@@ -17,6 +17,8 @@ use App\Http\Controllers\LatController;
 use App\Http\Controllers\CariController;
 use App\Http\Controllers\BukuController;
 use App\Http\Controllers\SiswaController;
+use App\Http\Controllers\ValidasiController;
+use App\Http\Controllers\Gurucontroller;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -100,3 +102,15 @@ route::get('/siswa/edit/{id}',[SiswaController::class,'edit']);
 route::post('/siswa/update',[SiswaController::class,'update']);
 route::get('/siswa/hapus/{id}',[SiswaController::class,'hapus']);
 route::get('/siswa/cari',[SiswaController::class,'cari'])->name('siswa.cari');
+
+// Validasi
+route::get('/latihan-validasi',[ValidasiController::class,'input']);
+route::post('/latihan-validasi/proses',[ValidasiController::class,'proses']);
+
+// Soft Deletes
+route::get('/guru',[GuruController::class,'index']);
+route::get('/guru/hapus/{id}',[GuruController::class,'hapus']);
+route::get('/guru/trash',[GuruController::class,'trash']);
+route::get('/guru/kembalikan/{id}',[GuruController::class,'kembalikan']);
+route::get('/guru/kembalikan_semua',[GuruController::class,'kembalikan_semua']);
+route::get('/guru/hapus_permanen/{id}',[GuruController::class,'hapus_permanen']);

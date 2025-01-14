@@ -7,6 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Data Siswa</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ asset('/css/app.css') }}">
+    <script type="text/javascript" src="/js/app.js"></script>
     <style>
         body {
             font-family: 'Roboto', sans-serif;
