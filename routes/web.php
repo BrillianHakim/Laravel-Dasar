@@ -114,3 +114,9 @@ route::get('/guru/trash',[GuruController::class,'trash']);
 route::get('/guru/kembalikan/{id}',[GuruController::class,'kembalikan']);
 route::get('/guru/kembalikan_semua',[GuruController::class,'kembalikan_semua']);
 route::get('/guru/hapus_permanen/{id}',[GuruController::class,'hapus_permanen']);
+route::get('/guru/hapus_permanen_semua',[GuruController::class,'hapus_permanen_semua']);
+
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

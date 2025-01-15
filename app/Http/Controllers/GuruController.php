@@ -40,4 +40,9 @@ class GuruController extends Controller
 
         return redirect('/guru/trash');
     }
+    public function hapus_permanen_semua(){
+        $guru = Guru::onlyTrashed();
+        $guru->forceDelete();
+        return redirect('/guru/trash');
+    }
 }
