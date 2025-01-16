@@ -19,6 +19,9 @@ use App\Http\Controllers\BukuController;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\ValidasiController;
 use App\Http\Controllers\Gurucontroller;
+use App\Http\Controllers\EncryptDecryptController;
+use App\Http\Controllers\HashingController;
+use App\Http\Controllers\BukuTamuController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -120,3 +123,18 @@ route::get('/guru/hapus_permanen_semua',[GuruController::class,'hapus_permanen_s
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// enkripsi dekripsi 
+route::get('/enkripsi', [EncryptDecryptController::class, 'enkripsi']);
+route::get('/data/', [EncryptDecryptController::class, 'data']);
+route::get('/data/{data_rahasia}', [EncryptDecryptController::class, 'data_proses']);
+
+// hashing
+route::get('/hashing', [HashingController::class, 'hash']);
+
+// Buku Tamu Project Sederhana 
+route::get('/bukutamu',[BukuTamuController::class,'index']);
+route::get('/bukutamu/tambah',[BukuTamuController::class,'tambah'])->name('bukutamu.tambah');
+route::post('/bukutamu/store',[BukuTamuController::class,'store']);
+route::get('/bukutamu/edit/{id}',[BukuTamuController::class,'edit']);
+route::get('/bukutamu/hapus/{id}',[BukuTamuController::class,'hapus']);
