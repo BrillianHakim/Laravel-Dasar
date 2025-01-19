@@ -4,6 +4,11 @@
     <div class="container">
         <h2>Daftar Tamu</h2>
         <a href="{{ route('bukutamu.tambah') }}" class="btn btn-primary float-left mb-3">Tambah Data</a>
+        <form action="/bukutamu/cari" method="GET">
+            <input type="text" name="cari" placeholder="Cari Pegawai .."
+            value="{{ old('cari') }}">
+            <input type="submit" value="CARI">
+            </form>
         <table>
             <thead>
                 <tr>
@@ -33,5 +38,11 @@
                 @endforeach
             </tbody>
         </table>
+        <div class="pagination">
+            {{ $buku_tamu->links() }}
+        </div>
+
+
+
     </div>
 @endsection

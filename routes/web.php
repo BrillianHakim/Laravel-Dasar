@@ -22,6 +22,8 @@ use App\Http\Controllers\Gurucontroller;
 use App\Http\Controllers\EncryptDecryptController;
 use App\Http\Controllers\HashingController;
 use App\Http\Controllers\BukuTamuController;
+use App\Http\Controllers\UploadController;
+use App\Http\Controllers\TesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -137,4 +139,16 @@ route::get('/bukutamu',[BukuTamuController::class,'index']);
 route::get('/bukutamu/tambah',[BukuTamuController::class,'tambah'])->name('bukutamu.tambah');
 route::post('/bukutamu/store',[BukuTamuController::class,'store']);
 route::get('/bukutamu/edit/{id}',[BukuTamuController::class,'edit']);
+route::post('/bukutamu/update',[BukuTamuController::class,'update']);
 route::get('/bukutamu/hapus/{id}',[BukuTamuController::class,'hapus']);
+route::get('/bukutamu/cari',[BukuTamuController::class,'cari'])->name('bukutamu.cari');
+
+
+// upload file
+route::get('/upload',[UploadController::class,'upload']);
+route::post('/upload/proses',[UploadController::class,'proses_upload']);
+
+// session
+route::get('/session/tampil',[TesController::class,'tampilSession']);
+route::get('/session/buat',[TesController::class,'buatSession']);
+route::get('/session/hapus',[TesController::class,'hapusSession']);
