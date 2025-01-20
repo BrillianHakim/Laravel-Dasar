@@ -24,6 +24,8 @@ use App\Http\Controllers\HashingController;
 use App\Http\Controllers\BukuTamuController;
 use App\Http\Controllers\UploadController;
 use App\Http\Controllers\TesController;
+use App\Http\Controllers\NotifController;
+use App\Http\Controllers\ErorController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -152,3 +154,12 @@ route::post('/upload/proses',[UploadController::class,'proses_upload']);
 route::get('/session/tampil',[TesController::class,'tampilSession']);
 route::get('/session/buat',[TesController::class,'buatSession']);
 route::get('/session/hapus',[TesController::class,'hapusSession']);
+
+// notifikaso
+route::get('/pesan',[NotifController::class,'index']);
+route::get('/pesan/sukses',[NotifController::class,'sukses']);
+route::get('/pesan/peringatan',[NotifController::class,'peringatan']);
+route::get('/pesan/gagal',[NotifController::class,'gagal']);
+
+// Error dan Logging Laravel
+route::get('/eror/{nama}',[ErorController::class,'index']);
