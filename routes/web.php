@@ -26,6 +26,7 @@ use App\Http\Controllers\UploadController;
 use App\Http\Controllers\TesController;
 use App\Http\Controllers\NotifController;
 use App\Http\Controllers\ErorController;
+use App\Http\Controllers\PdfController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -163,3 +164,7 @@ route::get('/pesan/gagal',[NotifController::class,'gagal']);
 
 // Error dan Logging Laravel
 route::get('/eror/{nama}',[ErorController::class,'index']);
+
+// Export Pdf ler
+route::get('/pdf',[PdfController::class,'index']);
+route::get('/pdf/laporan',[PdfController::class,'cetak']);
